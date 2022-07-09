@@ -1,0 +1,21 @@
+.square {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000;
+  margin: auto;
+  position: relative;
+  top: 500px;
+}
+.js-button {
+  height: 40px;
+  width: 140px;
+}
+
+.qwe {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ddd {
+  margin: 0 auto;
+}
