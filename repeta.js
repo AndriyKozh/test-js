@@ -1314,29 +1314,225 @@
 // console.log(infoCar2.price);
 // console.log(infoCar2);
 
-class Storage {
-  constructor(items) {
-    this.items = items;
-  }
-  getItems() {
-    return this.items;
-  }
-  addItem(newItem) {
-    this.items.push(newItem);
-  }
-  removeItem(itemToRemove) {
-    this.items.push(itemToRemove);
+// class Cars {
+//   constructor({ price }) {
+//     this._price = price;
+//   }
+//   get price() {
+//     return this._price;
+//   }
+//   set price(newPrice) {
+//     this._price = newPrice;
+//   }
+// }
 
-    const indRemove = this.items.filter((el, indx, arr) => arr.indexOf(el) === indx);
+// const result = new Cars({ price: 10000 });
+// console.log(result);
+// console.log(result.price);
+// result.price = 20000;
+// console.log(result.price);
 
-    return indRemove;
-  }
-}
+// console.log(result);
+//======================================================== HERO =================================================
+// class Hero {
+//   constructor({ name = 'hero', xp = 0 } = {}) {
+//     this.name = name;
+//     this.xp = xp;
+//   }
 
-// Change code above this line
-const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem('Droid');
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem('Prolonger');
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+//   newXp(amount) {
+//     console.log(`Your hero ${this.name} geting ${amount} xp`);
+//     this.xp += amount;
+//   }
+// }
+// const greGor = new Hero({ name: 'Andriy', xp: 500 });
+
+// // console.log(greGor);
+
+// // console.log(greGor.newXp(1000));
+
+// class Warrion extends Hero {
+//   constructor({ weapon, ...restProps }) {
+//     super(restProps);
+//     this.weapon = weapon;
+//   }
+//   atack() {
+//     console.log(`${this.name} атакує за допомогою ${this.weapon}`);
+//   }
+// }
+
+// class Mage extends Hero {
+//   constructor({ weapon, mana, ...restProps } = {}) {
+//     super(restProps);
+//     this.weapon = weapon;
+//     this.mana = mana;
+//   }
+//   cast(delXp) {
+//     console.log(`${this.name} щось там кастує ${delXp}`);
+//     console.log(`${this.name} знімає ${delXp} з ${newHero.name}`);
+//     return console.log(newHero.xp - delXp);
+//   }
+// }
+
+// class iAm extends Warrion {
+//   constructor({ tank, ...restProps } = {}) {
+//     super(restProps);
+//     this._tank = tank;
+//   }
+//   get tank() {
+//     return this._tank;
+//   }
+//   set tank(nawTank) {
+//     this._tank = nawTank;
+//   }
+// }
+
+// const newIam = new iAm({ name: 'Andriy', xp: 300, weapon: 'stick', tank: 'Abrams' });
+
+// const newHeroMage = new Mage({ name: 'Magomed', xp: 1800, weapon: 'hend', mana: 5000 });
+// console.log(newHeroMage);
+
+// const newHero = new Warrion({ name: 'Halk', xp: 1500, weapon: 'alebarda' });
+// console.log(newHero);
+
+// newHero.atack();
+// newHero.newXp(500);
+
+// newHeroMage.cast(1500);
+
+// console.log(newHero.xp);
+
+// console.log(newIam);
+// newIam.tank = 'ABRAMS--90';
+// console.log(newIam);
+//============================================================================================================
+
+// function fnA(x) {
+//   console.log(x);
+//   return function (y) {
+//     return console.log(x + y);
+//   };
+// }
+
+// const fnB = fnA(5);
+
+// console.log(fnB(10));
+
+// function countSheeps(arrayOfSheep) {
+//   const a = arrayOfSheep.filter(el => el === true);
+//   return a.length;
+// }
+
+// const b = [
+//   true,
+//   true,
+//   true,
+//   false,
+//   true,
+//   true,
+//   true,
+//   true,
+//   true,
+//   false,
+//   true,
+//   false,
+//   true,
+//   false,
+//   false,
+//   true,
+//   true,
+//   true,
+//   true,
+//   true,
+//   false,
+//   false,
+//   true,
+//   true,
+// ];
+// console.log(countSheeps(b));
+
+// var summation = function (num) {
+//   // Code here
+//   if (num.length < num) {
+//     num += 1;
+//   }
+// // };
+// function simpleMultiplication(number) {
+//   if (number % 2 === 0) {
+//     return number * 8;
+//   }
+//   if (number % 2 !== 0) {
+//     return number * 9;
+//   }
+
+//   // your code........
+// }
+
+// console.log(simpleMultiplication(1));
+
+// function find_average(rray) {
+//   // your code here
+
+// }
+// console.log(find_average([1, 2, 3]));
+
+// function maps(x) {
+//   //return x.map(el => el * 2);
+//   let arr = [];
+//   for (let i = 0; i < x.length; i++) {
+//     arr.push(x[i] * 2);
+//   }
+//   return arr;
+// }
+
+// maps = ᅟ = ᅠ => (ᅠ != +[] ? [ᅠ[+[]] + ᅠ[+[]], ...ᅟ(ᅠ.slice(!+[]))] : []);
+
+// console.log(maps([4, 1, 1, 1, 4]));
+
+// function DNAtoRNA(dna) {
+//   let a = dna.split('');
+//   let res = [];
+//   for (let el of a) {
+//     if (el !== 'T') {
+//       res.push(el);
+//       continue;
+//     }
+//     if (el === 'T') {
+//       res.push((el = 'U'));
+//     }
+//   }
+//   return res.join('');
+// }
+
+// console.log(DNAtoRNA('GACCGCCGCC'));
+
+// var min = function (list) {
+//   return Math.min(...list);
+// };
+
+// var max = function (list) {
+//   return list[0];
+// };
+// console.log(min([-52, 56, 30, 29, -54, 0, -110]));
+
+// class Hero {
+//   constructor({ name, xp }) {
+//     this.name = name;
+//     this.xp = xp;
+//   }
+// }
+
+// class Andriy extends Hero {
+//   constructor({ balist, ...restProps }) {
+//     super(restProps);
+//     this.balist = balist;
+//   }
+//   tisHp(newxp) {
+//     console.log(`в героя ${this.name} виявляється ${newxp}`);
+//   }
+// }
+
+// const newObj = new Andriy({ name: 'Andriy', xp: 1500, balist: 'Scipeter' });
+
+// console.log(newObj);
+// console.log(newObj.tisHp(2000));
